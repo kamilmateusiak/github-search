@@ -12,7 +12,7 @@ export interface IRequestResult<TResult> {
 }
 
 class ApiClient {
-  api: AxiosInstance
+  api: AxiosInstance;
 
   constructor() {
     this.api = axios.create({
@@ -34,14 +34,14 @@ class ApiClient {
       } else {
         requestResult.result = response.data;
       }
-    } catch(e) {
+    } catch (e) {
       requestResult.error = e;
     }
 
     return requestResult;
   }
 
- get<TResult>(url: string): Promise<IRequestResult<TResult>> {
+  get<TResult>(url: string): Promise<IRequestResult<TResult>> {
     return this.request<TResult>({ method: 'GET', url });
   }
 }

@@ -1,24 +1,44 @@
-import apiClient, { IRequestResult } from "../api-client";
-import { IUser, IRawUser } from "./interfaces";
-import { deserializeUser } from "./user-serializer";
+import apiClient, { IRequestResult } from '../api-client';
+import { IUser, IRawUser, IUserRepository, IRawUserRepository } from './interfaces';
+import { deserializeUser, deserializeUserRepos } from './user-serializer';
 
 class UserApi {
-  async findUser(name: string): Promise<IRequestResult<IUser>> {
-    if (!name) {
+  async findUser(login: string): Promise<IRequestResult<IUser>> {
+    if (!login) {
       return {
         result: null,
-        error: new Error('Please provide username')
-      }
+        error: new Error('Please provide user login')
+      };
     }
 
-    const path = `/users/${name}`;
+    const path = `/users/${login}`;
 
     const requestResult = await apiClient.get<IRawUser>(path);
 
     return {
       ...requestResult,
       result: deserializeUser(requestResult.result)
+    };
+  }
+
+  async getMostPopularRepos(login: string): Promise<IRequestResult<IUserRepository[]>> {
+    if (!login) {
+      return {
+        result: null,
+        error: new Error('Please provide user login')
+      };
     }
+
+    const path = `/search/repositories?q=user:${login}&sort=stars&order=desc&per_page=3`;
+
+    const requestResult = await apiClient.get<{
+      items: IRawUserRepository[];
+    }>(path);
+
+    return {
+      ...requestResult,
+      result: deserializeUserRepos(requestResult.result && requestResult.result.items)
+    };
   }
 }
 

@@ -21,3 +21,27 @@ export interface IUser {
   };
   description: string;
 }
+
+export interface IRawUserRepository {
+  id: number;
+  name: string;
+  full_name: string;
+  private: boolean;
+  html_url: string;
+  stargazers_count: number;
+  watchers_count: number;
+  language: string;
+  forks_count: number;
+  open_issues_count: number;
+}
+
+export interface IUserRepository {
+  id: number;
+  name: string;
+  fullName: string;
+  isPrivate: boolean;
+  url: string;
+  starsCount: number;
+  watchersCount: number;
+  language: string;
+}
