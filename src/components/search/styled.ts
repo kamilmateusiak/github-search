@@ -1,5 +1,5 @@
-import css from "@emotion/css";
-import { FontSize } from "../../constants/font-size";
+import css from '@emotion/css';
+import { FontSize } from '../../constants/font-size';
 
 export const field = css`
   font-size: ${FontSize.Text};
@@ -14,6 +14,7 @@ export const field = css`
     display: block;
     width: 100%;
     border: 1px solid #fff;
+    color: #fff;
     border-radius: 4px;
     margin: 0;
     padding: 10px;
