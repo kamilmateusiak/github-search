@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import SearchInput from './components/search';
-import Layout from './components/layout';
+import { Layout } from './components/layout';
 import { userApi } from './services/api/user';
 import { IUser, IUserRepository } from './services/api/user/interfaces';
 import { UserRepos } from './components/user-repos';
 import { UserInfo } from './components/user-info';
+import { SearchInput } from './components/search-input';
 
 interface IUserState {
   isLoading: boolean;
