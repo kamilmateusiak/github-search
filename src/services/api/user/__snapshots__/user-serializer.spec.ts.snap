@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Services | Api | User | deserializers deserializeUser result should match snapshot 1`] = `
+Object {
+  "apiUrls": Object {
+    "repos": "https://api.github.com/users/octocat/repos",
+  },
+  "avatarUrl": "https://github.com/images/error/octocat_happy.gif",
+  "description": "There once was...",
+  "email": "octocat@github.com",
+  "id": 1,
+  "login": "octocat",
+  "name": "monalisa octocat",
+  "url": "https://github.com/octocat",
+}
+`;
+
+exports[`Services | Api | User | deserializers deserializeUserRepo result should match snapshot 1`] = `
+Object {
+  "fullName": "dtrupenn/Tetris",
+  "id": 3081286,
+  "isPrivate": false,
+  "language": "Assembly",
+  "name": "Tetris",
+  "starsCount": 1,
+  "url": "https://github.com/dtrupenn/Tetris",
+  "watchersCount": 1,
+}
+`;

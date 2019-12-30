@@ -31,8 +31,6 @@ export interface IRawUserRepository {
   stargazers_count: number;
   watchers_count: number;
   language: string;
-  forks_count: number;
-  open_issues_count: number;
 }
 
 export interface IUserRepository {
