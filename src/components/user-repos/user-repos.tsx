@@ -27,7 +27,7 @@ const UserRepos: React.FC<IProps> = ({ repos, isLoading, error }) => {
             <ListItem key={repo.id}>
               <a css={link} href={repo.url}>
                 {repo.name}
-              </a>{' '}
+              </a>
               ({repo.starsCount})
             </ListItem>
           ))}

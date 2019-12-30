@@ -2,7 +2,7 @@ import apiClient, { IRequestResult } from '../api-client';
 import { IUser, IRawUser, IUserRepository, IRawUserRepository } from './interfaces';
 import { deserializeUser, deserializeUserRepos } from './user-serializer';
 
-class UserApi {
+const userApi = {
   async findUser(login: string): Promise<IRequestResult<IUser>> {
     if (!login) {
       return {
@@ -19,7 +19,7 @@ class UserApi {
       ...requestResult,
       result: deserializeUser(requestResult.result)
     };
-  }
+  },
 
   async getMostPopularRepos(login: string): Promise<IRequestResult<IUserRepository[]>> {
     if (!login) {
@@ -40,8 +40,6 @@ class UserApi {
       result: deserializeUserRepos(requestResult.result && requestResult.result.items)
     };
   }
-}
-
-const userApi = new UserApi();
+};
 
 export default userApi;

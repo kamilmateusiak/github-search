@@ -1,6 +1,6 @@
 import React from 'react';
-import { container } from './styled';
 import { SerializedStyles } from '@emotion/css';
+import { container } from './styled';
 
 interface IProps {
   isLoading?: boolean;

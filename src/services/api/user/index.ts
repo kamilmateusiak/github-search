@@ -1,5 +1,3 @@
-import userApi from "./user-api";
+import userApi from './user-api';
 
-export {
-  userApi
-};
+export { userApi };
