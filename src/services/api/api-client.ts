@@ -11,7 +11,7 @@ export interface IRequestResult<TResult> {
   error: Error | null;
 }
 
-export class ApiClient {
+class ApiClient {
   api: AxiosInstance;
 
   constructor() {

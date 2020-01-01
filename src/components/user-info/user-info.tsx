@@ -5,9 +5,9 @@ import { ContentBox } from '../content-box';
 import UserInfoSkeleton from './skeleton';
 
 interface IProps {
-  user?: IUser;
+  user: Maybe<IUser>;
   isLoading?: boolean;
-  error?: string;
+  error: Maybe<string>;
 }
 
 const UserInfo: React.FC<IProps> = ({ user, error, isLoading }) => {

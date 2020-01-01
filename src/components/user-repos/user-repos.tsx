@@ -6,9 +6,9 @@ import { ContentBox } from '../content-box';
 import UserReposSkeleton from './skeleton';
 
 interface IProps {
-  repos?: IUserRepository[];
+  repos: Maybe<IUserRepository[]>;
   isLoading?: boolean;
-  error?: string;
+  error: Maybe<string>;
 }
 
 const UserRepos: React.FC<IProps> = ({ repos, isLoading, error }) => {

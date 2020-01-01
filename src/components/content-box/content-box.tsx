@@ -4,7 +4,7 @@ import { container } from './styled';
 
 interface IProps {
   isLoading?: boolean;
-  error?: string;
+  error?: Maybe<string>;
   cssStyles?: SerializedStyles;
   isEmpty?: boolean;
   loadingState?: React.ReactNode;
