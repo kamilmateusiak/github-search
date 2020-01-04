@@ -13,6 +13,7 @@ export const container = css`
   width: 100%;
   margin: 20px auto;
   padding: 0 30px;
+  box-sizing: border-box;
 `;
 
 export const header = css`
